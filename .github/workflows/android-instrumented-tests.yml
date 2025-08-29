@@ -40,5 +40,5 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
           disable-animations: true
           script: ./gradlew connectedDebugAndroidTest
-          emulator-boot-timeout: 600
+          emulator-boot-timeout: 700
 
