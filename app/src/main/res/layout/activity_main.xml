@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name" />
+
+    <EditText
+        android:id="@+id/surename_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your surname" />
+
+    <Button
+        android:id="@+id/click_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click me!!!" />
+
+    <TextView
+        android:id="@+id/greeting_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Guest!"
+        android:paddingTop="12dp"/>
+
+    <TextView
+        android:id="@+id/clicked_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button clicked 0 times"
+        android:paddingTop="8dp"/>
+</LinearLayout>
