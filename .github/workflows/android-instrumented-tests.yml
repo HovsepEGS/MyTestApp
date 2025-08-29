@@ -30,7 +30,8 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Install system image
-        run: sdkmanager "system-images;android-30;google_apis;x86_64"
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "system-images;android-30;google_apis;x86_64"
 
       # 4. Установка Android SDK + запуск эмулятора
       - name: Run UI Tests on Emulator
