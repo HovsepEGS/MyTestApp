@@ -34,6 +34,8 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: Nexus 6
+          disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
           script: ./gradlew connectedDebugAndroidTest
+          emulator-boot-timeout: 600
 
