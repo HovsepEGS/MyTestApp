@@ -53,7 +53,7 @@ dependencies {
     androidTestImplementation("androidx.test:rules:1.6.0")
 
     // (опционально) если используешь Orchestrator:
-    androidTestUtil("androidx.test:orchestrator:1.6.1")
+//    androidTestUtil("androidx.test:orchestrator:1.6.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
