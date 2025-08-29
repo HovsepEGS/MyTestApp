@@ -44,6 +44,6 @@ jobs:
           force-avd-creation: true
           emulator-boot-timeout: 1200
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          disable-animations: true
+          disable-animations: false
           script: ./gradlew connectedDebugAndroidTest
 
