@@ -39,4 +39,4 @@ jobs:
               boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
               sleep 5
             done
-              ./gradlew connectedDebugAndroidTest
+            ./gradlew connectedDebugAndroidTest
