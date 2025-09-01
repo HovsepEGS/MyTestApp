@@ -7,6 +7,9 @@ import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.IdlingPolicies
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.UiController
+import android.view.View
 
 import org.junit.Before
 import org.junit.Rule
@@ -26,8 +29,20 @@ class UiTests {
         IdlingPolicies.setIdlingResourceTimeout(60, TimeUnit.SECONDS)
     }
 
+    private fun waitFor(millis: Long) = object : ViewAction {
+        override fun getConstraints() = isRoot()
+        override fun getDescription() = "Wait for $millis milliseconds."
+        override fun perform(uiController: UiController, view: View?) {
+            uiController.loopMainThreadForAtLeast(millis)
+        }
+    }
+
     @Test
     fun testInputAndButtonClick() {
+        // Ждем фокус окна
+        onView(isRoot()).perform(waitFor(3000))
+
+
         // Вводим текст
         onView(withId(R.id.name_input)).perform(typeText("Hovsep"), closeSoftKeyboard())
         onView(withId(R.id.surename_input)).perform(typeText("Avagyan"), closeSoftKeyboard())
