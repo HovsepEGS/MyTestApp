@@ -33,11 +33,10 @@ jobs:
           emulator-port: 5558
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
           script: |
-            # Ждать, пока эмулятор полностью загрузится
             adb wait-for-device
             boot_completed=""
             until [ "$boot_completed" = "1" ]; do
               boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
               sleep 5
             done
-            ./gradlew connectedDebugAndroidTest
+              ./gradlew connectedDebugAndroidTest
