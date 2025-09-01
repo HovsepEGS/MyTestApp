@@ -35,7 +35,7 @@ class UiTests {
         // Кликаем кнопку
         onView(withId(R.id.click_button)).perform(click())
 
-        // Проверяем приветствие!
+        // Проверяем приветствие!!
         onView(withId(R.id.greeting_output))
             .check(matches(withText("Hello Hovsep Avagyan!")))
     }
