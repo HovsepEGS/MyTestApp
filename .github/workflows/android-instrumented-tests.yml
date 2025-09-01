@@ -13,7 +13,7 @@ jobs:
     steps:
       # 1. Чекаут кода
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 2. Установка JDK
       - name: Setup JDK 17
@@ -42,7 +42,7 @@ jobs:
           arch: x86
           profile: Nexus 6
           force-avd-creation: true
-          emulator-boot-timeout: 1200
+          emulator-boot-timeout: 900
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -accel on
           disable-animations: true
           script: ./gradlew connectedDebugAndroidTest
