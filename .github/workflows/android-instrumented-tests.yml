@@ -39,11 +39,11 @@ jobs:
         with:
           api-level: 30
           target: google_apis
-          arch: x86_64
+          arch: x86
           profile: Nexus 6
           force-avd-creation: true
           emulator-boot-timeout: 1200
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          disable-animations: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -accel on
+          disable-animations: true
           script: ./gradlew connectedDebugAndroidTest
 
