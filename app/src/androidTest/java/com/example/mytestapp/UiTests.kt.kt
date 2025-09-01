@@ -27,6 +27,15 @@ class UiTests {
     fun setup() {
         IdlingPolicies.setMasterPolicyTimeout(60, TimeUnit.SECONDS)
         IdlingPolicies.setIdlingResourceTimeout(60, TimeUnit.SECONDS)
+
+        onView(isRoot()).perform(object : ViewAction {
+            override fun getConstraints() = isRoot()
+            override fun getDescription() = "Send key events to unlock screen"
+            override fun perform(uiController: UiController, view: View?) {
+                uiController.injectKeyEvent(android.view.KeyEvent(android.view.KeyEvent.ACTION_DOWN, android.view.KeyEvent.KEYCODE_MENU))
+                uiController.loopMainThreadForAtLeast(1000)
+            }
+        })
     }
 
     private fun waitFor(millis: Long) = object : ViewAction {
