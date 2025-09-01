@@ -40,7 +40,7 @@ class UiTests {
     @Test
     fun testInputAndButtonClick() {
         // Ждем фокус окна
-        onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(10000))
 
 
         // Вводим текст
