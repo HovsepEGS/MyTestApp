@@ -37,7 +37,7 @@ jobs:
       - name: Run UI Tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 31
           target: google_apis
           arch: x86
           profile: Nexus 6
