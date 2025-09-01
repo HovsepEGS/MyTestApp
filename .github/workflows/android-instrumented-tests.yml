@@ -25,9 +25,9 @@ jobs:
       - name: Run UI tests on emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
+          api-level: 30
           target: google_apis
-          arch: x86
+          arch: x86_64
           profile: Nexus 6
           emulator-boot-timeout: 600
           script: ./gradlew connectedDebugAndroidTest
