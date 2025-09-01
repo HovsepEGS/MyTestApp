@@ -8,7 +8,7 @@ on:
 
 jobs:
   instrumented-tests:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       # 1. Чекаут кода
@@ -29,21 +29,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
-      - name: Install system image
-        run: |
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "system-images;android-30;google_apis;x86_64"
-
-      # 4. Установка Android SDK + запуск эмулятора
-      - name: Run UI Tests on Emulator
+      # 4. Запуск Android эмулятора и тестов
+      - name: Run UI Tests on Emulator (macOS)
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 31
           target: google_apis
           arch: x86
           profile: Nexus 6
-          force-avd-creation: true
-          emulator-boot-timeout: 900
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -accel on
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel on -no-snapshot
           disable-animations: true
+          emulator-boot-timeout: 1200
           script: ./gradlew connectedDebugAndroidTest
-
