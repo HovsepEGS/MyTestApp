@@ -30,5 +30,7 @@ jobs:
           arch: x86
           profile: Nexus 6
           emulator-boot-timeout: 600
+          emulator-port: 5558
+          wait-for-boot: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
           script: ./gradlew connectedDebugAndroidTest
