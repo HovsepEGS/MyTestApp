@@ -29,10 +29,10 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
-          target: default
+          target: google_apis
 #          arch: x86
 #          profile: Nexus 6
-          emulator-port: 5555
+#          emulator-port: 5555
 #          emulator-boot-timeout: 600
 #          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
           script: ./gradlew connectedDebugAndroidTest
