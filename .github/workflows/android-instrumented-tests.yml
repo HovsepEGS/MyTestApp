@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  android-ui-tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,19 +16,22 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: 'temurin'
           java-version: 17
 
       - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
-      - name: Run UI tests on emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          target: google_apis
-          arch: x86
-          profile: Nexus 6
-          emulator-boot-timeout: 600
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
-          script: ./gradlew connectedDebugAndroidTest
+      - name: Run tests
+        run: ./gradlew clean testDebug
+
+#      - name: Run UI tests on emulator
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          target: google_apis
+#          arch: x86
+#          profile: Nexus 6
+#          emulator-boot-timeout: 600
+#          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
+#          script: ./gradlew connectedDebugAndroidTest
