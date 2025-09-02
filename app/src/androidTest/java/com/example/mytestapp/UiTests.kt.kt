@@ -38,18 +38,18 @@ class UiTests {
         })
     }
 
-    private fun waitFor(millis: Long) = object : ViewAction {
-        override fun getConstraints() = isRoot()
-        override fun getDescription() = "Wait for $millis milliseconds."
-        override fun perform(uiController: UiController, view: View?) {
-            uiController.loopMainThreadForAtLeast(millis)
-        }
-    }
+//    private fun waitFor(millis: Long) = object : ViewAction {
+//        override fun getConstraints() = isRoot()
+//        override fun getDescription() = "Wait for $millis milliseconds."
+//        override fun perform(uiController: UiController, view: View?) {
+//            uiController.loopMainThreadForAtLeast(millis)
+//        }
+//    }
 
     @Test
     fun testInputAndButtonClick() {
         // Ждем фокус окна
-        onView(isRoot()).perform(waitFor(10000))
+//        onView(isRoot()).perform(waitFor(10000))
 
 
         // Вводим текст
