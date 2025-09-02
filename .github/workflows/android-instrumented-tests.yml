@@ -36,3 +36,10 @@ jobs:
 #          emulator-boot-timeout: 600
 #          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
           script: ./gradlew connectedDebugAndroidTest
+
+      - name: Upload Android Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-test-report
+          path: app/build/reports/androidTests/connected/
