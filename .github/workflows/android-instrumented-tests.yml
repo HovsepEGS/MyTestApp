@@ -34,4 +34,4 @@ jobs:
 #          profile: Nexus 6
 #          emulator-boot-timeout: 600
 #          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -accel off
-          run: ./gradlew connectedDebugAndroidTest
+          script: ./gradlew connectedDebugAndroidTest
